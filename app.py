@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
@@ -6,9 +6,10 @@ app = Flask(__name__)
 @app.route("/", methods=['GET', 'POST'])
 def hello_world():
     if request.method == "GET":
-        return "<p>Hello, world!!!</p>"
+        return render_template("index.html")
     else:
-        print("THIS IS POST METHOD")
+        pass
+        
 
 @app.route("/nithya_is_awesome", methods=['GET', 'POST'])
 def nithya_world():
